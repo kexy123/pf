@@ -1,0 +1,146 @@
+:root {
+    --background: #eaeaea;
+    --border: #444444;
+
+    --text-color: #262626;
+    
+    --header-background: #a367d4;
+    --header-text-color: #eaeaea;
+    --header-border: #ad79d8;
+
+    --reflink: #72a1dd;
+    --reflink-hover: #8baedd;
+
+    --margin-left-right: 25%;
+
+    --section-transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1); /* Ease-out cubic */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #262626;
+        --border: #dddddd;
+        
+        --text-color: #eaeaea;
+
+        --header-border: #8054a3;
+        --header-text-color: #222222;
+
+        --reflink: #3f74b9;
+        --reflink-hover: #4c89da;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --margin-left-right: 1em;
+    }
+}
+
+body {
+    background-color: var(--background);
+
+    margin: 0;
+
+    font-size: 1.05em;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    border-bottom: 2px solid var(--header-border);
+
+    padding: 0.6em var(--margin-left-right);
+    
+    z-index: 999;
+}
+
+#website-title {
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+footer {
+    width: calc(100% - var(--margin-left-right) * 2);
+    margin: 0 var(--margin-left-right);
+    box-sizing: border-box;
+
+    border-top: 0.1em dotted var(--border);
+
+    padding: 0.6em 0;
+
+    display: flex;
+    gap: 0.5em;
+
+    z-index: 999;
+}
+
+footer > span {
+    flex: 1;
+}
+
+
+main {
+    flex: 1;
+    padding: 0 var(--margin-left-right);
+
+    height: 100vh;
+}
+
+main :is(h1, h2) {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border);
+}
+
+
+div.section {
+    position: relative;
+
+    top: 3em;
+    opacity: 0;
+
+    transition: top var(--section-transition), opacity var(--section-transition);
+}
+
+
+img.inline {
+    height: 1em;
+
+    vertical-align: middle;
+    padding-right: 0.25em;
+}
+
+
+a {
+    color: var(--reflink);
+    text-decoration: none;
+}
+
+a.external::after {
+    content: " ↗";
+}
+
+a:hover {
+    color: var(--reflink-hover);
+    text-decoration: underline;
+}
+
+
+ul.unlisted {
+    list-style: none;
+}
+
+ul.inline {
+    margin: 0;
+}
