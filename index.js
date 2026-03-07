@@ -1,5 +1,10 @@
 const navigationForm = performance.getEntriesByType("navigation");
 
+const locationHash = location.hash.substring(1);
+var locationId;
+
+const externalLink = /^https/;
+
 /**
  * Shows the sections in an animated form.
  */
@@ -28,8 +33,10 @@ function ShowSectionsImmediately() {
  * Forces hyperlinks to create a new tab.
  */
 function ChangeHyperlinks() {
-    let links = document.querySelectorAll("a.external");
+    let links = document.querySelectorAll("a");
     for (let link of links) {
+        if (!externalLink.test(link.href)) continue;
+        link.classList.add("external");
         link.target = "_blank";
         link.rel = "noopener noreferrer";
     }
@@ -43,4 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     ChangeHyperlinks();
+
+    locationId = document.getElementById("header-" + locationHash);
+    if (locationId) {
+        locationId.scrollIntoView();
+        locationId.classList.add("hash-selected");
+    }
 })
+
+window.addEventListener("hashchange", () => {
+    const locationHash = location.hash.slice(1);
+    if (locationId) {
+        locationId.classList.remove("hash-selected");
+    }
+    
+    locationId = document.getElementById("header-" + locationHash);
+    if (locationId) {
+        locationId.scrollIntoView();
+        locationId.classList.add("hash-selected");
+    }
+});
