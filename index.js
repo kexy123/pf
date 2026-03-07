@@ -9,7 +9,7 @@ const externalLink = /^https/;
  * Shows the sections in an animated form.
  */
 async function AnimateSections() {
-    let sections = document.querySelectorAll("main > div.section");
+    let sections = document.querySelectorAll("main > section");
     for (let section of sections) {
         await new Promise(resolve => setTimeout(resolve, 100));
         section.style.top = "0";
@@ -21,7 +21,7 @@ async function AnimateSections() {
  * Shows the sections immediately.
  */
 function ShowSectionsImmediately() {
-    let sections = document.querySelectorAll("main > div.section");
+    let sections = document.querySelectorAll("main > section");
     for (let section of sections) {
         section.style.transition = "none";
         section.style.top = "0";
@@ -42,6 +42,16 @@ function ChangeHyperlinks() {
     }
 }
 
+/**
+ * Adds the alt caption of the image as the title.
+ */
+function AltToTitle() {
+    let images = document.querySelectorAll("img");
+    for (let image of images) {
+        image.title = image.alt;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     if (navigationForm.length > 0 && navigationForm[0].type == "reload") {
         ShowSectionsImmediately();
@@ -50,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     ChangeHyperlinks();
+    AltToTitle();
 
     locationId = document.getElementById("header-" + locationHash);
     if (locationId) {
@@ -63,7 +74,7 @@ window.addEventListener("hashchange", () => {
     if (locationId) {
         locationId.classList.remove("hash-selected");
     }
-    
+
     locationId = document.getElementById("header-" + locationHash);
     if (locationId) {
         locationId.scrollIntoView();
