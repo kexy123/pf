@@ -24,10 +24,23 @@ function ShowSectionsImmediately() {
     }
 }
 
+/**
+ * Forces hyperlinks to create a new tab.
+ */
+function ChangeHyperlinks() {
+    let links = document.querySelectorAll("a.external");
+    for (let link of links) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     if (navigationForm.length > 0 && navigationForm[0].type == "reload") {
         ShowSectionsImmediately();
     } else {
         AnimateSections();
     }
+
+    ChangeHyperlinks();
 })

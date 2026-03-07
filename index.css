@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"');
+/* @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
     --background: #eaeaea;
+    --background-secondary: #fafafa;
     --border: #444444;
 
     --text-color: #262626;
@@ -16,26 +18,48 @@
     --margin-left-right: 25%;
 
     --section-transition: 0.3s cubic-bezier(0.33, 1, 0.68, 1); /* Ease-out cubic */
+
+    --thumbnail-height: 10em;
+
+    --font: "Lexend", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --code-font: "Space Mono";
+
+    --image-brightness: 1;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #262626;
+        --background-secondary: #202020;
         --border: #dddddd;
         
-        --text-color: #eaeaea;
+        --text-color: #bebebe;
 
         --header-border: #8054a3;
         --header-text-color: #222222;
 
         --reflink: #3f74b9;
         --reflink-hover: #4c89da;
+
+        --image-brightness: 0.9;
     }
 }
 
 @media (max-width: 800px) {
     :root {
         --margin-left-right: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    img.thumbnail {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    img.thumbnail {
+        height: var(--thumbnail-height);
     }
 }
 
@@ -49,7 +73,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    font-family: "Lexend", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: var(--font);
     color: var(--text-color);
     min-height: 100vh;
 }
@@ -129,14 +153,15 @@ a {
     text-decoration: none;
 }
 
-/* a.external::after {
-    content: " ↗";
-} */
-
 a:hover {
     color: var(--reflink-hover);
     text-decoration: underline;
 }
+
+/* On Apple devices, this creates an emoji. */
+/* a.external::after {
+    content: " ↗";
+} */
 
 
 ul.unlisted {
@@ -145,4 +170,56 @@ ul.unlisted {
 
 ul.inline {
     margin: 0;
+}
+
+
+article:has(img.thumbnail) {
+    min-height: calc(var(--thumbnail-height) + 0.3em);
+}
+
+
+img.thumbnail {
+    vertical-align: top;
+
+    display: inline-block;
+
+    border: 0.15em solid var(--border);
+    border-radius: 0.3em;
+
+    margin-bottom: 0.5em;
+
+    filter: brightness(var(--image-brightness));
+    
+    box-sizing: border-box;
+}
+
+img.thumb-left {
+    margin-right: 0.5em;
+    float: left;
+}
+
+img.thumb-right {
+    margin-left: 0.5em;
+    float: right;
+}
+
+
+code {
+    border: 1px solid var(--border);
+    border-radius: 0.2em;
+
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+    margin-block: 0.2em;
+
+    background-color: var(--background-secondary);
+
+    font-family: var(--code-font);
+
+    display: inline-block;
+
+    text-decoration: inherit;
 }
