@@ -206,7 +206,14 @@ img.inline {
     height: 1em;
 
     vertical-align: middle;
-    padding-right: 0.25em;
+    margin-right: 0.25em;
+}
+
+img.header-inline {
+    height: 1.5em;
+
+    vertical-align: bottom;
+    margin-right: 0.3em;
 }
 
 
