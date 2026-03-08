@@ -172,6 +172,10 @@ main :is(h1, h2) {
     border-bottom: 1px solid var(--border);
 }
 
+main p {
+    hyphens: auto;
+}
+
 
 section {
     position: relative;
@@ -185,7 +189,7 @@ section {
 div.info-box-summary {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 1em;
 }
@@ -214,6 +218,8 @@ img.header-inline {
 
     vertical-align: bottom;
     margin-right: 0.3em;
+
+    user-select: none;
 }
 
 
@@ -258,6 +264,8 @@ img.thumbnail {
     filter: brightness(var(--image-brightness));
 
     box-sizing: border-box;
+
+    user-select: none;
 }
 
 img.thumb-left {
