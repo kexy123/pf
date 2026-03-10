@@ -5,64 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kexy123's Portfolio</title>
 
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/web_icon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="sheet/header_footer.css">
+    <link rel="stylesheet" href="sheet/article.css">
+    <link rel="stylesheet" href="sheet/navigator.css">
+    <script src="scripts/index.js"></script>
 </head>
 <body>
     <header class="not-visible-on-print">
         <div>
-            <span id="website-title"><img src="icon.png" class="inline">kexy123's Portfolio</span>
+            <span id="website-title"><img src="images/web_icon.png" class="inline">kexy123's Portfolio</span>
+            <div class="flex-filler"></div>
+            <div class="header-right action">
+                <button class="action" aria-label="TOC">
+                    <img src="images/nav/hamburger.png" class="action">
+                </button>
+                <nav class="dropdown-menu content-list">
+                    <h1>Contents</h1>
+                    <p tabindex="1">@kexy123</p>
+                    <p class="h3">What I've worked on</p>
+                    <p class="h3"><a href="#worked-on">What I've worked on</a></p>
+                    <p class="h2">What I've worked on</p>
+                </nav>
+            </div>
+            <!-- <div class="header-right"> -->
+                <!-- <a class="action" onclick="" href=""></a> -->
+            <!-- </div> -->
         </div>
     </header>
-    <main>
-        <section>
-            <h1><a href="https://www.roblox.com/users/342150365/profile"><img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CEE8E10F5A20EBE00D45DB577B222EB9-Png/150/150/AvatarHeadshot/Webp/noFilter" class="header-inline">@kexy123</a></h1>
-            <div class="info-box-summary">
-                <div class="info-box"><b>5 years</b><br><small>programming experience</small></div>
-                <div class="info-box"><b>Programming, UI/UX</b><br><small>expertise</small></div>
-                <!-- <div class="info-box"><b>4</b><br><small>total projects</small></div> -->
+    <div class="content">
+        <div class="nav-list"></div>
+        <main>
+            <section>
+                <h1><a href="https://www.roblox.com/users/342150365/profile"><img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CEE8E10F5A20EBE00D45DB577B222EB9-Png/150/150/AvatarHeadshot/Webp/noFilter" class="header-inline">@kexy123</a></h1>
+                <div class="info-box-summary">
+                    <div class="info-box"><b>5 years</b><br><small>programming experience</small></div>
+                    <div class="info-box"><b>Programming, UI/UX</b><br><small>expertise</small></div>
+                    <!-- <div class="info-box"><b>4</b><br><small>total projects</small></div> -->
+                </div>
+            </section>
+            <section>
+                <p>I am a programmer and UI/UX designer with over five years of programming experience. I have focused mainly on Roblox game development, and I am interested in the projects that you give to me.</p>
+                <p>I write and maintain code at a professional standard and use modern and industry-level practices. I have contributed to some projects that gained hundreds of thousands of visits.</p>
+                <p>I am well-versed in many aspects of programming and game development genres.</p>
+            </section>
+            <div class="print-break-here"></div>
+            <section>
+                <h2 id="header-worked-on">What I've worked on</h2>
+                <article class="image-description">
+                    <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><img src="https://tr.rbxcdn.com/180DAY-2b931a486fc53e41e42ab921e5267b11/768/432/Image/Webp/noFilter" alt="A promotional thumbnail of Bliss City RP" class="thumbnail thumb-left"></a>
+                    <p>I've worked partially on <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><i>Bliss City RP</i></a> on Roblox along with someone else. I managed many of the tasks given at hand, and designed the fashion contest minigame.</p>
+                    <p>It has amassed over a million visits since its release.</p>
+                </article>
+                <article class="image-description">
+                    <a href="https://www.roblox.com/games/105368692401484/Raft-for-Brainrots"><img src="https://tr.rbxcdn.com/180DAY-3f1134e675119c1fa9433c9e0a06ac3f/768/432/Image/Webp/noFilter" alt="A promotional thumbnail of Raft for Brainrots" class="thumbnail thumb-right"></a>
+                    <p>I implemented primarily the water mechanics and physics in <a href="https://www.roblox.com/games/105368692401484/Raft-for-Brainrots"><i>Raft for Brainrots</i></a>, which includes its non-native waves.</p>
+                </article>
+            </section>
+            <div class="print-break-here"></div>
+            <section>
+                <h2 id="header-personal">My own personal projects</h2>
+                <article class="image-description">
+                    <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><img src="https://tr.rbxcdn.com/180DAY-35640de1e94e5fb462dc88b86199cd5b/256/256/Image/Webp/noFilter" alt="The promotional game icon of Find The Keys" class="thumbnail thumb-left"></a>
+                    I created all of the mechanics of <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><i>Find The Keys</i></a>, a scavenger hunt game. These include a custom admin system, use of APIs such as <a href="https://create.roblox.com/docs/reference/engine/classes/DataStoreService"><code>DataStoreService</code></a>, a quest system, custom dialogue system, and much more.
+                </article>
+                <article class="image-description">
+                    <a href="https://www.roblox.com/games/7373415916/Zombie-Apocalypse"><img src="https://tr.rbxcdn.com/180DAY-a331eae294209d425cb41927e7a0eec3/768/432/Image/Png/noFilter" alt="A promotional thumbnial of Zombie Apocalypse" class="thumbnail thumb-right"></a>
+                    With another person that I worked with, I created the waves and map mechanic for a project called <a href="https://www.roblox.com/games/7373415916/Zombie-Apocalypse"><i>Zombie Apocalypse</i></a>, as well as the behavior of the different forms of zombies in the game.
+                </article>
+            </section>
+            <div class="print-break-here"></div>
+            <section>
+                <h2 id="header-work-ethic">Work ethic and expectation</h2>
+                <p>I maintain punctuality and do the work as intended at a reasonable level in a way that is simple to read and use for others.</p>
+                <p>I expect that there are no major interferences while working on the commission and that there is a proportionate and reasonable payment for all work except for fixing any issues that are encountered in the project.</p>
+                <p>I strictly don't use AI and LLMs to create code, and instead use it as an automation and research tool.</p>
+            </section>
+        </main>
+        <div class="not-visible-on-print">
+            <nav class="content-list sticky-nav">
+                <h1>Contents</h1>
+                <p tabindex="1">@kexy123</p>
+                <p class="h3">What I've worked on</p>
+                <p class="h3"><a href="#worked-on">What I've worked on</a></p>
+                <p class="h2">What I've worked on</p>
             </div>
-        </section>
-        <section>
-            <p>I am a programmer and UI/UX designer with over five years of programming experience. I have focused mainly on Roblox game development, and I am interested in the projects that you give to me.</p>
-            <p>I write and maintain code at a professional standard and use modern and industry-level practices. I have contributed to some projects that gained hundreds of thousands of visits.</p>
-            <p>I am well-versed in many aspects of programming and game development genres.</p>
-        </section>
-        <div class="print-break-here"></div>
-        <section>
-            <h2 id="header-worked-on">What I've worked on</h2>
-            <article class="image-description">
-                <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><img src="https://tr.rbxcdn.com/180DAY-2b931a486fc53e41e42ab921e5267b11/768/432/Image/Webp/noFilter" alt="A promotional thumbnail of Bliss City RP" class="thumbnail thumb-left"></a>
-                <p>I've worked partially on <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><i>Bliss City RP</i></a> on Roblox along with someone else. I managed many of the tasks given at hand, and designed the fashion contest minigame.</p>
-                <p>It has amassed over a million visits since its release.</p>
-            </article>
-            <article class="image-description">
-                <a href="https://www.roblox.com/games/105368692401484/Raft-for-Brainrots"><img src="https://tr.rbxcdn.com/180DAY-3f1134e675119c1fa9433c9e0a06ac3f/768/432/Image/Webp/noFilter" alt="A promotional thumbnail of Raft for Brainrots" class="thumbnail thumb-right"></a>
-                <p>I implemented primarily the water mechanics and physics in <a href="https://www.roblox.com/games/105368692401484/Raft-for-Brainrots"><i>Raft for Brainrots</i></a>, which includes its non-native waves.</p>
-            </article>
-        </section>
-        <div class="print-break-here"></div>
-        <section>
-            <h2 id="header-personal">My own personal projects</h2>
-            <article class="image-description">
-                <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><img src="https://tr.rbxcdn.com/180DAY-35640de1e94e5fb462dc88b86199cd5b/256/256/Image/Webp/noFilter" alt="The promotional game icon of Find The Keys" class="thumbnail thumb-left"></a>
-                I created all of the mechanics of <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><i>Find The Keys</i></a>, a scavenger hunt game. These include a custom admin system, use of APIs such as <a href="https://create.roblox.com/docs/reference/engine/classes/DataStoreService"><code>DataStoreService</code></a>, a quest system, custom dialogue system, and much more.
-            </article>
-            <article class="image-description">
-                <a href="https://www.roblox.com/games/7373415916/Zombie-Apocalypse"><img src="https://tr.rbxcdn.com/180DAY-a331eae294209d425cb41927e7a0eec3/768/432/Image/Png/noFilter" alt="A promotional thumbnial of Zombie Apocalypse" class="thumbnail thumb-right"></a>
-                With another person that I worked with, I created the waves and map mechanic for a project called <a href="https://www.roblox.com/games/7373415916/Zombie-Apocalypse"><i>Zombie Apocalypse</i></a>, as well as the behavior of the different forms of zombies in the game.
-            </article>
-        </section>
-        <div class="print-break-here"></div>
-        <section>
-            <h2 id="header-work-ethic">Work ethic and expectation</h2>
-            <p>I maintain punctuality and do the work as intended at a reasonable level in a way that is simple to read and use for others.</p>
-            <p>I expect that there are no major interferences while working on the commission and that there is a proportionate and reasonable payment for all work except for fixing any issues that are encountered in the project.</p>
-            <p>I strictly don't use AI and LLMs to create code, and instead use it as an automation and research tool.</p>
-        </section>
-    </main>
+        </div>
+    </nav>
     <footer class="not-visible-on-print">
         <span>
             <b>External</b>
