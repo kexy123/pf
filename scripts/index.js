@@ -5,6 +5,8 @@ var locationId;
 
 var headerHeight;
 
+var TOCClone;
+
 const externalLink = /^https/;
 
 
@@ -86,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
     AltToTitle();
     UpdateHeaderHeight();
 
-    let toc = GenerateTableOfContents(document.querySelector("main"), true);
+    let toc = GenerateTableOfContents(document.querySelector("main"));
+    TOCClone = toc.cloneNode(true);
+    toc.classList.add("sticky-nav");
     document.querySelector("div.table-of-contents").appendChild(toc);
-    
+
     GoToHeader(locationHash);
 })
 

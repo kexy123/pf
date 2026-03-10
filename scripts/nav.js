@@ -3,7 +3,7 @@ var currentHeader;
 /**
  * Generates a table of contents.
  */
-function GenerateTableOfContents(article, stick) {
+function GenerateTableOfContents(article) {
     let nav = document.createElement("nav");
     nav.classList.add("content-list");
 
@@ -26,8 +26,6 @@ function GenerateTableOfContents(article, stick) {
         nav.appendChild(link);
         index++;
     }
-
-    if (stick) nav.classList.add("sticky-nav");
 
     return nav;
 }
