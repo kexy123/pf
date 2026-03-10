@@ -5,6 +5,7 @@ var locationId;
 
 const externalLink = /^https/;
 
+
 /**
  * Shows the sections in an animated form.
  */
@@ -52,6 +53,25 @@ function AltToTitle() {
     }
 }
 
+/**
+ * Initiates the sidebar contents navigation.
+ */
+function InitiateNavigation() {
+    let sidebar = document.querySelector("nav.content-list");
+    console.log(sidebar);
+    if (!sidebar) return;
+    console.log(getOffset(sidebar));
+    sidebar.style.top = `${getOffset(sidebar)}px`;
+}
+
+/**
+ * Updates the header height.
+ */
+function UpdateHeaderHeight() {
+    let header = document.querySelector("header");
+    document.documentElement.style.setProperty("--header-height", header.offsetHeight + "px");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     if (navigationForm.length > 0 && navigationForm[0].type == "reload") {
         ShowSectionsImmediately();
@@ -61,12 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ChangeHyperlinks();
     AltToTitle();
+    UpdateHeaderHeight();
 
     locationId = document.getElementById("header-" + locationHash);
     if (locationId) {
         locationId.scrollIntoView();
         locationId.classList.add("hash-selected");
     }
+})
+
+window.addEventListener("resize", () => {
+    UpdateHeaderHeight();
 })
 
 window.addEventListener("hashchange", () => {
