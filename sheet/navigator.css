@@ -25,26 +25,35 @@ nav.sticky-nav h1 {
     margin-top: 1em;
 }
 
-nav.content-list p {
+nav.content-list a {
     margin-block: 0.2em;
+    display: block;
 }
 
-nav.content-list p.h2 {
+nav.content-list .H2 {
     padding-left: 1.5em;
 }
 
-nav.content-list p.h3 {
+nav.content-list .H3 {
     padding-left: 3em;
 }
 
-nav.content-list p.h4 {
+nav.content-list .H4 {
     padding-left: 4.5em;
 }
 
-nav.content-list p.h5 {
+nav.content-list .H5 {
     padding-left: 6em;
 }
 
-nav.content-list p.h6 {
+nav.content-list .H6 {
     padding-left: 6.5em;
+}
+
+
+a.current-sidebar-nav {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bolder;
+    pointer-events: none;
 }

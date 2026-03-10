@@ -7,9 +7,12 @@
 
     <link rel="shortcut icon" href="images/web_icon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="sheet/header_footer.css">
+    <link rel="stylesheet" href="sheet/common.css">
     <link rel="stylesheet" href="sheet/article.css">
     <link rel="stylesheet" href="sheet/navigator.css">
+
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/dropdown.js"></script>
     <script src="scripts/index.js"></script>
 </head>
 <body>
@@ -18,16 +21,9 @@
             <span id="website-title"><img src="images/web_icon.png" class="inline">kexy123's Portfolio</span>
             <div class="flex-filler"></div>
             <div class="header-right action">
-                <button class="action" aria-label="TOC">
+                <!-- <button class="action" aria-label="TOC" onclick="DropdownTOC()">
                     <img src="images/nav/hamburger.png" class="action">
-                </button>
-                <nav class="dropdown-menu content-list">
-                    <h1>Contents</h1>
-                    <p tabindex="1">@kexy123</p>
-                    <p class="h3">What I've worked on</p>
-                    <p class="h3"><a href="#worked-on">What I've worked on</a></p>
-                    <p class="h2">What I've worked on</p>
-                </nav>
+                </button> -->
             </div>
             <!-- <div class="header-right"> -->
                 <!-- <a class="action" onclick="" href=""></a> -->
@@ -52,7 +48,7 @@
             </section>
             <div class="print-break-here"></div>
             <section>
-                <h2 id="header-worked-on">What I've worked on</h2>
+                <h2 id="worked-on">What I've worked on</h2>
                 <article class="image-description">
                     <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><img src="https://tr.rbxcdn.com/180DAY-2b931a486fc53e41e42ab921e5267b11/768/432/Image/Webp/noFilter" alt="A promotional thumbnail of Bliss City RP" class="thumbnail thumb-left"></a>
                     <p>I've worked partially on <a href="https://www.roblox.com/games/112476889534187/Bliss-City-RP"><i>Bliss City RP</i></a> on Roblox along with someone else. I managed many of the tasks given at hand, and designed the fashion contest minigame.</p>
@@ -65,7 +61,7 @@
             </section>
             <div class="print-break-here"></div>
             <section>
-                <h2 id="header-personal">My own personal projects</h2>
+                <h2 id="personal">My own personal projects</h2>
                 <article class="image-description">
                     <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><img src="https://tr.rbxcdn.com/180DAY-35640de1e94e5fb462dc88b86199cd5b/256/256/Image/Webp/noFilter" alt="The promotional game icon of Find The Keys" class="thumbnail thumb-left"></a>
                     I created all of the mechanics of <a href="https://www.roblox.com/games/15699460717/Find-The-Keys"><i>Find The Keys</i></a>, a scavenger hunt game. These include a custom admin system, use of APIs such as <a href="https://create.roblox.com/docs/reference/engine/classes/DataStoreService"><code>DataStoreService</code></a>, a quest system, custom dialogue system, and much more.
@@ -77,22 +73,14 @@
             </section>
             <div class="print-break-here"></div>
             <section>
-                <h2 id="header-work-ethic">Work ethic and expectation</h2>
+                <h2 id="work-ethic">Work ethic and expectation</h2>
                 <p>I maintain punctuality and do the work as intended at a reasonable level in a way that is simple to read and use for others.</p>
                 <p>I expect that there are no major interferences while working on the commission and that there is a proportionate and reasonable payment for all work except for fixing any issues that are encountered in the project.</p>
                 <p>I strictly don't use AI and LLMs to create code, and instead use it as an automation and research tool.</p>
             </section>
         </main>
-        <div class="not-visible-on-print">
-            <nav class="content-list sticky-nav">
-                <h1>Contents</h1>
-                <p tabindex="1">@kexy123</p>
-                <p class="h3">What I've worked on</p>
-                <p class="h3"><a href="#worked-on">What I've worked on</a></p>
-                <p class="h2">What I've worked on</p>
-            </div>
-        </div>
-    </nav>
+        <div class="not-visible-on-print table-of-contents"></div>
+    </div>
     <footer class="not-visible-on-print">
         <span>
             <b>External</b>

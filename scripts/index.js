@@ -3,6 +3,8 @@ const navigationForm = performance.getEntriesByType("navigation");
 const locationHash = location.hash.substring(1);
 var locationId;
 
+var headerHeight;
+
 const externalLink = /^https/;
 
 
@@ -69,7 +71,8 @@ function InitiateNavigation() {
  */
 function UpdateHeaderHeight() {
     let header = document.querySelector("header");
-    document.documentElement.style.setProperty("--header-height", header.offsetHeight + "px");
+    headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty("--header-height", headerHeight + "px");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -83,11 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     AltToTitle();
     UpdateHeaderHeight();
 
-    locationId = document.getElementById("header-" + locationHash);
-    if (locationId) {
-        locationId.scrollIntoView();
-        locationId.classList.add("hash-selected");
-    }
+    let toc = GenerateTableOfContents(document.querySelector("main"), true);
+    document.querySelector("div.table-of-contents").appendChild(toc);
+    
+    GoToHeader(locationHash);
 })
 
 window.addEventListener("resize", () => {
@@ -100,9 +102,5 @@ window.addEventListener("hashchange", () => {
         locationId.classList.remove("hash-selected");
     }
 
-    locationId = document.getElementById("header-" + locationHash);
-    if (locationId) {
-        locationId.scrollIntoView();
-        locationId.classList.add("hash-selected");
-    }
+    GoToHeader(locationHash);
 });
