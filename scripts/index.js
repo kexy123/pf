@@ -78,7 +78,7 @@ function UpdateHeaderHeight() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (navigationForm.length > 0 && navigationForm[0].type == "reload") {
+    if (locationHash || navigationForm.length > 0 && navigationForm[0].type == "reload") {
         ShowSectionsImmediately();
     } else {
         AnimateSections();
