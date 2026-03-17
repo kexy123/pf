@@ -84,6 +84,10 @@
         color: var(--header-text-color);
     }
 
+    .hash-selected:is(h3, h4, h5, h6) {
+        padding-bottom: 0.3em;
+    }
+
     div.print-break-here {
         display: none;
     }
