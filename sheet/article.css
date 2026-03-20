@@ -188,3 +188,16 @@ code {
 
     text-decoration: inherit;
 }
+
+
+div.column {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 1em;
+}
+
+div.column > * {
+    flex: 1;
+}
